@@ -38,16 +38,18 @@ namespace Template.Module.Controllers
             SalesOrderModule.Caption = "Sales Orders";
             SalesOrderModule.Execute += SelectedModule;
 
-            var TypesWithModuleAttribute = GetTypesWithHelpAttribute(this.GetType().Assembly);
 
+            var TypesWithModuleAttribute = GetTypesWithHelpAttribute(typeof(Template.Module.TemplateModule).Assembly);
             typesPerModule = TypesWithModuleAttribute.ToLookup(p => p.GetCustomAttribute<ModuleAttribute>().ModuleId);
+
         }
 
         private const string HideReason = "NotInCurrentModule";
-        ILookup<string, Type> typesPerModule;
-        void SelectedModule(object sender, SimpleActionExecuteEventArgs e)
+        protected ILookup<string, Type> typesPerModule;
+        protected virtual void SelectedModule(object sender, SimpleActionExecuteEventArgs e)
         {
-            HideAll(navigationController.ShowNavigationItemAction.Items);
+            //HideAll(navigationController.ShowNavigationItemAction.Items);
+           
             IGrouping<string, Type> CurrentModuleTypes = typesPerModule.Where(tpm => tpm.Key == e.Action.Id).FirstOrDefault();
             ShowItem(navigationController.ShowNavigationItemAction.Items, CurrentModuleTypes);
         }
@@ -94,8 +96,6 @@ namespace Template.Module.Controllers
                         {
                             item.Active[HideReason] = CurrentModuleTypes.Any(types => types.FullName == ListViewModel.ModelClass.Name);
                             Debug.WriteLine(string.Format("{0}:{1}", item.Caption, item.Active[HideReason]));
-                            
-                            
 
                         }
 
@@ -103,7 +103,9 @@ namespace Template.Module.Controllers
                     }
 
                 }
-               
+                if (item.Items == null)
+                    return;
+
                 ShowItem(item.Items, CurrentModuleTypes);
             }
         }
