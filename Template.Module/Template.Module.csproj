@@ -97,7 +97,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Accounting\Accounting.cs" />
+    <Compile Include="BusinessObjects\InventoryControl\Ic.cs" />
+    <Compile Include="BusinessObjects\PurchaseOrders\Po.cs" />
+    <Compile Include="BusinessObjects\SalesOrders\So.cs" />
+    <Compile Include="Controllers\ModulesController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="Metadata\ModuleAttribute.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -112,6 +120,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>Module.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseUpdate\ReadMe.txt" />
