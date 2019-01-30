@@ -25,6 +25,10 @@ namespace Template.Module.Controllers
             //string ModulesMenuActionContainer =PredefinedCategory.View.ToString();//"CustomModuleMenu";
 
             string ModulesMenuActionContainer = "CustomModuleMenu";
+
+
+           
+
             SimpleAction AccountingModule = new SimpleAction(this, "AccountingModule", ModulesMenuActionContainer);
             AccountingModule.Caption = "Accounting";
             AccountingModule.Execute += SelectedModule;
@@ -45,6 +49,45 @@ namespace Template.Module.Controllers
             SalesOrderModule.Execute += SelectedModule;
             SalesOrderModule.Category = ModulesMenuActionContainer;
 
+            SimpleAction WebShop = new SimpleAction(this, "WebShop", ModulesMenuActionContainer);
+            WebShop.Caption = "Web Shop";
+
+            SimpleAction CurrencyExchange = new SimpleAction(this, "CurrencyExchange", ModulesMenuActionContainer);
+            CurrencyExchange.Caption = "Currency Exchange";
+         
+
+            SimpleAction RemoteTransaction = new SimpleAction(this, "RemoteTransaction", ModulesMenuActionContainer);
+            RemoteTransaction.Caption = "Remote Transaction";
+
+            string MainMenu = "CustomMainMenu";
+            SimpleAction File = new SimpleAction(this, "FileAction", MainMenu);
+            File.Caption = "File";
+
+            SimpleAction Edit = new SimpleAction(this, "EditAction", MainMenu);
+            Edit.Caption = "Edit";
+
+            SimpleAction Tool = new SimpleAction(this, "ToolAction", MainMenu);
+            Tool.Caption = "Tools";
+
+            SimpleAction About = new SimpleAction(this, "AboutAction", MainMenu);
+            About.Caption = "About";
+
+            SingleChoiceAction SubMenu = new SingleChoiceAction(this, "SubMenu", MainMenu);
+            SubMenu.Caption = "Manu with Childs";
+            SubMenu.DefaultItemMode = DefaultItemMode.FirstActiveItem;
+
+            ChoiceActionItem item = new ChoiceActionItem("item 1", null);
+            item.Items.Add(new ChoiceActionItem("Sub item 1", null));
+            SubMenu.Items.Add(item);
+            SubMenu.Items.Add(new ChoiceActionItem("item 2", null));
+            SubMenu.Items.Add(new ChoiceActionItem("item 3", null));
+            SubMenu.Items.Add(new ChoiceActionItem("item 4", null));
+            SubMenu.Items.Add(new ChoiceActionItem("item 5", null));
+            SubMenu.Items.Add(new ChoiceActionItem("item 6", null));
+            SubMenu.Items.Add(new ChoiceActionItem("item 7", null));
+            SubMenu.Items.Add(new ChoiceActionItem("item 8", null));
+
+
 
             var TypesWithModuleAttribute = GetTypesWithHelpAttribute(typeof(Template.Module.TemplateModule).Assembly);
             typesPerModule = TypesWithModuleAttribute.ToLookup(p => p.GetCustomAttribute<ModuleAttribute>().ModuleId);
@@ -52,10 +95,11 @@ namespace Template.Module.Controllers
         }
 
         private const string HideReason = "NotInCurrentModule";
+        private System.ComponentModel.IContainer components;
         protected ILookup<string, Type> typesPerModule;
         protected virtual void SelectedModule(object sender, SimpleActionExecuteEventArgs e)
         {
-            //HideAll(navigationController.ShowNavigationItemAction.Items);
+           
            
             IGrouping<string, Type> CurrentModuleTypes = typesPerModule.Where(tpm => tpm.Key == e.Action.Id).FirstOrDefault();
             ShowItem(navigationController.ShowNavigationItemAction.Items, CurrentModuleTypes);
@@ -127,5 +171,6 @@ namespace Template.Module.Controllers
             }
         }
 
+       
     }
 }

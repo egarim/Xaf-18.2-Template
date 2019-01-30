@@ -57,12 +57,31 @@
     </div>
 </div>
 <div id="mainDiv" class="xafAlignCenter paddings overflowHidden <%= AdditionalClass %>">
+    <div id="CustomToolBars" class="overflowHidden">
+          <xaf:XafUpdatePanel ID="XafUpdatePanelCustomMenu" runat="server">
+                                                <xaf:ActionContainerHolder runat="server" ID="ActionContainerHolderCustom" ContainerStyle="ToolBar" Orientation="Horizontal">
+                                                     <menu accessibilitycompliant="True" enablesubmenuscrolling="True" enableviewstate="False" showastoolbar="True" skinid="MenuButtons"></menu>
+                                                     <actioncontainers> 
+                                                        <xaf:WebActionContainer ContainerId="CustomMainMenu" />
+                                                    </actioncontainers>
+                                                </xaf:ActionContainerHolder>
+                                            </xaf:XafUpdatePanel>
+    <xaf:XafUpdatePanel ID="XafUpdatePanelModulesMenu" runat="server">
+                                                <xaf:ActionContainerHolder runat="server" ID="ActionContainerHolderModules" ContainerStyle="Buttons" Orientation="Horizontal">
+                                                     <menu accessibilitycompliant="True" enablesubmenuscrolling="True" enableviewstate="False" showastoolbar="True" skinid="MenuButtons"></menu>
+                                                     <actioncontainers> 
+                                                        <xaf:WebActionContainer ContainerId="CustomModuleMenu" />
+                                                    </actioncontainers>
+                                                </xaf:ActionContainerHolder>
+                                            </xaf:XafUpdatePanel>
+    </div>
     <asp:Panel runat="server" id="navigation" CssClass = "xafNav xafNavHidden">
         <xaf:XafUpdatePanel ID="UPNC" runat="server" CssClass="xafContent">
             <xaf:NavigationActionContainer ID="NC" runat="server" ContainerId="ViewsNavigation" Width="100%" BackColor="White">
             </xaf:NavigationActionContainer>
         </xaf:XafUpdatePanel>
     </asp:Panel>
+  
     <div id="content" class="overflowHidden">
         <div id="menuAreaDiv" style="z-index: 2500">
             <table id="menuInnerTable" class="width100 menuAreaDiv" style="padding-bottom: 13px; padding-top: 13px;">
@@ -103,30 +122,6 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                             <xaf:XafUpdatePanel ID="XafUpdatePanelCustomMenu" runat="server">
-                                                <xaf:ActionContainerHolder runat="server" ID="ActionContainerHolderCustom" ContainerStyle="Buttons" Orientation="Horizontal">
-                                                     <actioncontainers> 
-                                                        <xaf:WebActionContainer ContainerId="CustomMainMenu" />
-                                                    </actioncontainers>
-                                                </xaf:ActionContainerHolder>
-                                            </xaf:XafUpdatePanel>
-                                        </td>
-
-                                    </tr>
-                                         <tr>
-                                        <td>
-                                             <xaf:XafUpdatePanel ID="XafUpdatePanelModulesMenu" runat="server">
-                                                <xaf:ActionContainerHolder runat="server" ID="ActionContainerHolderModules" ContainerStyle="Buttons" Orientation="Horizontal">
-                                                     <actioncontainers> 
-                                                        <xaf:WebActionContainer ContainerId="CustomModuleMenu" />
-                                                    </actioncontainers>
-                                                </xaf:ActionContainerHolder>
-                                            </xaf:XafUpdatePanel>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>
                                             <xaf:XafUpdatePanel ID="XafUpdatePanel1" runat="server">
                                                 <xaf:ActionContainerHolder runat="server" ID="mainMenu" ContainerStyle="Buttons" Orientation="Horizontal">
                                                     <menu width="100%" itemautowidth="False" clientinstancename="mainMenu" itemwrap="false">
@@ -134,7 +129,6 @@
                                                         <borderleft borderstyle="None" />
                                                         <borderright borderstyle="None" />
                                                     </menu>
-                                                 
                                                     <actioncontainers> 
                                                         <xaf:WebActionContainer ContainerId="ObjectsCreation" />
                                                         <xaf:WebActionContainer ContainerId="Save" DefaultActionID="Save" IsDropDown="true" AutoChangeDefaultAction="true" />

@@ -33,19 +33,53 @@ namespace Template.Module.BusinessObjects.PurchaseOrders
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
-        //private string _PersistentProperty;
-        //[XafDisplayName("My display name"), ToolTip("My hint message")]
-        //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]
-        //[Persistent("DatabaseColumnName"), RuleRequiredField(DefaultContexts.Save)]
-        //public string PersistentProperty {
-        //    get { return _PersistentProperty; }
-        //    set { SetPropertyValue("PersistentProperty", ref _PersistentProperty, value); }
-        //}
+        string column6;
+        string column5;
+        string column4;
+        string colum3;
+        string column2;
+        string column1;
 
-        //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
-        //public void ActionMethod() {
-        //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
-        //    this.PersistentProperty = "Paid";
-        //}
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Column1
+        {
+            get => column1;
+            set => SetPropertyValue(nameof(Column1), ref column1, value);
+        }
+
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Column2
+        {
+            get => column2;
+            set => SetPropertyValue(nameof(Column2), ref column2, value);
+        }
+
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Colum3
+        {
+            get => colum3;
+            set => SetPropertyValue(nameof(Colum3), ref colum3, value);
+        }
+
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Column4
+        {
+            get => column4;
+            set => SetPropertyValue(nameof(Column4), ref column4, value);
+        }
+
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Column5
+        {
+            get => column5;
+            set => SetPropertyValue(nameof(Column5), ref column5, value);
+        }
+
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Column6
+        {
+            get => column6;
+            set => SetPropertyValue(nameof(Column6), ref column6, value);
+        }
     }
 }

@@ -24,9 +24,7 @@ namespace Template.Module.Web.Controllers
                 showNavigationItemController.ShowNavigationItemAction.CustomizeControl += ShowNavigationItemAction_CustomizeControl;
             }
         }
-        //NavBarControl navBar;
-        //TreeList treeList;
-        //DevExpress.ExpressApp.Win.Templates.Navigation.XafAccordionControl accordion;
+      
         protected override void SelectedModule(object sender, SimpleActionExecuteEventArgs e)
         {
             base.SelectedModule(sender, e);
@@ -38,8 +36,9 @@ namespace Template.Module.Web.Controllers
         DevExpress.Web.ASPxNavBar control;
         private void ShowNavigationItemAction_CustomizeControl(object sender, DevExpress.ExpressApp.Actions.CustomizeControlEventArgs e)
         {
-            control = e.Control as DevExpress.Web.ASPxNavBar;
             Debug.WriteLine(string.Format("{0}:{1}", "e.Control.GetType()", e.Control.GetType()));
+            control = e.Control as DevExpress.Web.ASPxNavBar;
+          
 
 
         }

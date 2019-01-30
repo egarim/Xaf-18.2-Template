@@ -67,6 +67,42 @@ namespace Template.Web {
         protected global::DevExpress.ExpressApp.Web.Templates.ActionContainers.ActionContainerHolder SAC;
         
         /// <summary>
+        /// XafUpdatePanelCustomMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.ExpressApp.Web.Templates.XafUpdatePanel XafUpdatePanelCustomMenu;
+        
+        /// <summary>
+        /// ActionContainerHolderCustom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.ExpressApp.Web.Templates.ActionContainers.ActionContainerHolder ActionContainerHolderCustom;
+        
+        /// <summary>
+        /// XafUpdatePanelModulesMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.ExpressApp.Web.Templates.XafUpdatePanel XafUpdatePanelModulesMenu;
+        
+        /// <summary>
+        /// ActionContainerHolderModules control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.ExpressApp.Web.Templates.ActionContainers.ActionContainerHolder ActionContainerHolderModules;
+        
+        /// <summary>
         /// navigation control.
         /// </summary>
         /// <remarks>
@@ -128,42 +164,6 @@ namespace Template.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.ExpressApp.Web.Controls.ViewCaptionControl VCC;
-        
-        /// <summary>
-        /// XafUpdatePanelCustomMenu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.ExpressApp.Web.Templates.XafUpdatePanel XafUpdatePanelCustomMenu;
-        
-        /// <summary>
-        /// ActionContainerHolderCustom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.ExpressApp.Web.Templates.ActionContainers.ActionContainerHolder ActionContainerHolderCustom;
-        
-        /// <summary>
-        /// XafUpdatePanelModulesMenu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.ExpressApp.Web.Templates.XafUpdatePanel XafUpdatePanelModulesMenu;
-        
-        /// <summary>
-        /// ActionContainerHolderModules control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.ExpressApp.Web.Templates.ActionContainers.ActionContainerHolder ActionContainerHolderModules;
         
         /// <summary>
         /// XafUpdatePanel1 control.

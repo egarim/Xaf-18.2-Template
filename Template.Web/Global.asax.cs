@@ -28,8 +28,7 @@ namespace Template.Web {
             Tracing.Initialize();
             WebApplication.SetInstance(Session, new TemplateAspNetApplication());
             DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
-            WebApplication.Instance.Settings.DefaultVerticalTemplateContentPath =
-          "CustomTemplate.ascx";
+            WebApplication.Instance.Settings.DefaultVerticalTemplateContentPath = "CustomTemplate.ascx";
             WebApplication.Instance.SwitchToNewStyle();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
