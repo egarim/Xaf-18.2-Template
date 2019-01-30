@@ -101,6 +101,12 @@
     <Compile Include="BusinessObjects\InventoryControl\Ic.cs" />
     <Compile Include="BusinessObjects\PurchaseOrders\Po.cs" />
     <Compile Include="BusinessObjects\SalesOrders\So.cs" />
+    <Compile Include="Controllers\Menu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ModulesController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Web", "Template.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Module.Spa", "Template.Module.Spa\Template.Module.Spa.csproj", "{B4F94CDF-0C15-46A7-8249-4A6C4F7E7B08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Spa", "Template.Spa\Template.Spa.csproj", "{336203C0-EDEB-4F3A-9907-743AD5FC69A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Spa", "Template.Spa\Template.Spa.csproj", "{336203C0-EDEB-4F3A-9907-743AD5FC69A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Module.Win", "Template.Module.Win\Template.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
 EndProject

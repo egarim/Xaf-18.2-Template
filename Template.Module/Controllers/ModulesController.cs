@@ -22,21 +22,28 @@ namespace Template.Module.Controllers
         {
             this.TargetWindowType = WindowType.Main;
 
-            SimpleAction AccountingModule = new SimpleAction(this, "AccountingModule", PredefinedCategory.View);
+            //string ModulesMenuActionContainer =PredefinedCategory.View.ToString();//"CustomModuleMenu";
+
+            string ModulesMenuActionContainer = "CustomModuleMenu";
+            SimpleAction AccountingModule = new SimpleAction(this, "AccountingModule", ModulesMenuActionContainer);
             AccountingModule.Caption = "Accounting";
             AccountingModule.Execute += SelectedModule;
+         
 
-            SimpleAction InventoryControlModule = new SimpleAction(this, "InventoryControlModule", PredefinedCategory.View);
+            SimpleAction InventoryControlModule = new SimpleAction(this, "InventoryControlModule", ModulesMenuActionContainer);
             InventoryControlModule.Caption = "Inventory Controll";
             InventoryControlModule.Execute += SelectedModule;
+            InventoryControlModule.Category = ModulesMenuActionContainer;
 
-            SimpleAction PurchaseOrderModule = new SimpleAction(this, "PurchaseOrderModule", PredefinedCategory.View);
+            SimpleAction PurchaseOrderModule = new SimpleAction(this, "PurchaseOrderModule", ModulesMenuActionContainer);
             PurchaseOrderModule.Caption = "Purcharse Orders";
             PurchaseOrderModule.Execute += SelectedModule;
+            PurchaseOrderModule.Category = ModulesMenuActionContainer;
 
-            SimpleAction SalesOrderModule = new SimpleAction(this, "SalesOrderModule", PredefinedCategory.View);
+            SimpleAction SalesOrderModule = new SimpleAction(this, "SalesOrderModule", ModulesMenuActionContainer);
             SalesOrderModule.Caption = "Sales Orders";
             SalesOrderModule.Execute += SelectedModule;
+            SalesOrderModule.Category = ModulesMenuActionContainer;
 
 
             var TypesWithModuleAttribute = GetTypesWithHelpAttribute(typeof(Template.Module.TemplateModule).Assembly);
