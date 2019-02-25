@@ -101,8 +101,15 @@
     <Compile Include="BusinessObjects\InventoryControl\Ic.cs" />
     <Compile Include="BusinessObjects\PurchaseOrders\Po.cs" />
     <Compile Include="BusinessObjects\SalesOrders\So.cs" />
+    <Compile Include="SuperSearch\IGetSuperSearchTypes.cs" />
+    <Compile Include="SuperSearch\SearchResult.cs" />
     <Compile Include="Controllers\ModulesController.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SuperSearch\SuperSearchAttribute.cs" />
+    <Compile Include="SuperSearch\SuperSearchController.cs" />
+    <Compile Include="SuperSearch\SuperSearchController.Designer.cs">
+      <DependentUpon>SuperSearchController.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Metadata\ModuleAttribute.cs" />
@@ -117,6 +124,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controllers\ModulesController.resx">
       <DependentUpon>ModulesController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperSearch\SuperSearchController.resx">
+      <DependentUpon>SuperSearchController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">

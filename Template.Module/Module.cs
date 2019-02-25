@@ -16,25 +16,46 @@ using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.Xpo;
+using Template.Module.SuperSearch;
+using Template.Module.BusinessObjects.Accounting;
+using Template.Module.BusinessObjects.InventoryControl;
 
-namespace Template.Module {
+namespace Template.Module
+{
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppModuleBasetopic.aspx.
-    public sealed partial class TemplateModule : ModuleBase {
-        public TemplateModule() {
+    public sealed partial class TemplateModule : ModuleBase, IGetSuperSearchTypes
+    {
+        public TemplateModule()
+        {
             InitializeComponent();
-			BaseObject.OidInitializationMode = OidInitializationMode.AfterConstruction;
+            BaseObject.OidInitializationMode = OidInitializationMode.AfterConstruction;
         }
-        public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
+
+        public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB)
+        {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
             return new ModuleUpdater[] { updater };
         }
-        public override void Setup(XafApplication application) {
+
+        public override void Setup(XafApplication application)
+        {
             base.Setup(application);
             // Manage various aspects of the application UI and behavior at the module level.
         }
-        public override void CustomizeTypesInfo(ITypesInfo typesInfo) {
+
+        public override void CustomizeTypesInfo(ITypesInfo typesInfo)
+        {
             base.CustomizeTypesInfo(typesInfo);
             CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo);
+        }
+
+        public List<Type> GetSupperSearchTypes()
+        {
+            //HACK this can be done by reflection
+            List<Type> Types = new List<Type>();
+            Types.Add(typeof(Accounting));
+            Types.Add(typeof(Ic));
+            return Types;
         }
     }
 }

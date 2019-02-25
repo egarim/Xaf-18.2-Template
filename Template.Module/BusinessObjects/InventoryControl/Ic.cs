@@ -12,11 +12,13 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using Template.Module.Metadata;
+using Template.Module.Controllers;
 
 namespace Template.Module.BusinessObjects.InventoryControl
 {
     [DefaultClassOptions]
     [Module("InventoryControlModule")]
+    [SuperSearchAttribute("Column1;Column2")]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
@@ -28,17 +30,19 @@ namespace Template.Module.BusinessObjects.InventoryControl
             : base(session)
         {
         }
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
-        string column6;
-        string column5;
-        string column4;
-        string colum3;
-        string column2;
-        string column1;
+
+        private string column6;
+        private string column5;
+        private string column4;
+        private string colum3;
+        private string column2;
+        private string column1;
 
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
         public string Column1
