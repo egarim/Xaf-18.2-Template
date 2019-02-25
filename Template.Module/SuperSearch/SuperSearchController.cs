@@ -29,7 +29,18 @@ namespace Template.Module.Controllers
         public SuperSearchController()
         {
             InitializeComponent();
+            detailView = new SimpleAction(this, "ShowDetailView", "Hidden");
+            detailView.Caption = "ShowDetailView";
+            detailView.Execute += ShowDetailView_Execute;
             // Target required Views (via the TargetXXX properties) and create their Actions.
+        }
+
+        private void ShowDetailView_Execute(object sender, SimpleActionExecuteEventArgs e)
+        {
+            SearchResult CurrentSearchResult = (SearchResult)e.CurrentObject;
+            IObjectSpace objectSpace = Application.CreateObjectSpace(CurrentSearchResult.ObjectType);
+
+            e.ShowViewParameters.CreatedView = Application.CreateDetailView(objectSpace, objectSpace.GetObjectByKey(CurrentSearchResult.ObjectType, Guid.Parse(CurrentSearchResult.ObjectKey)), true);
         }
 
         private List<Type> SearchableTypes = new List<Type>();
@@ -37,6 +48,13 @@ namespace Template.Module.Controllers
         protected override void OnActivated()
         {
             base.OnActivated();
+            processCurrentObjectController = Frame.GetController<ListViewProcessCurrentObjectController>();
+            if (processCurrentObjectController != null)
+            {
+                processCurrentObjectController.CustomProcessSelectedItem +=
+                    processCurrentObjectController_CustomProcessSelectedItem;
+            }
+
             SearchableTypes = new List<Type>();
             foreach (ModuleBase moduleBase in this.Application.Modules)
             {
@@ -51,7 +69,15 @@ namespace Template.Module.Controllers
             objectSpace.ObjectsGetting += ObjectSpace_ObjectsGetting;
         }
 
+        private void processCurrentObjectController_CustomProcessSelectedItem(object sender, CustomProcessListViewSelectedItemEventArgs e)
+        {
+            e.Handled = true;
+            detailView.DoExecute();
+        }
+
         private BindingList<SearchResult> objects = new BindingList<SearchResult>();
+        private ListViewProcessCurrentObjectController processCurrentObjectController;
+        private SimpleAction detailView;
 
         private void ObjectSpace_ObjectsGetting(object sender, ObjectsGettingEventArgs e)
         {
@@ -157,6 +183,11 @@ namespace Template.Module.Controllers
         {
             // Unsubscribe from previously subscribed events and release other references and resources.
             base.OnDeactivated();
+            if (processCurrentObjectController != null)
+            {
+                processCurrentObjectController.CustomProcessSelectedItem -=
+                    processCurrentObjectController_CustomProcessSelectedItem;
+            }
         }
 
         private void Search_Execute(object sender, ParametrizedActionExecuteEventArgs e)
@@ -177,6 +208,7 @@ namespace Template.Module.Controllers
                     var SearchResult = this.View.ObjectSpace.CreateObject<SearchResult>();
                     SearchResult.ObjectDisplayName = type.Name;
                     XafDataViewRecord xafDataViewRecord = (XafDataViewRecord)Dv[i];
+                    SearchResult.ObjectType = type;
                     SearchResult.ObjectKey = xafDataViewRecord[0].ToString();
                     foreach (var displayProperty in DisplayProperties)
                     {

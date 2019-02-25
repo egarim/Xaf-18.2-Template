@@ -19,7 +19,11 @@ namespace Template.Module.BusinessObjects.SuperSearch
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
         public string ObjectDisplayName { get; set; }
         public string Display { get; set; }
+
+        [Browsable(false)]
         public Type ObjectType { get; set; }
-        public object ObjectKey { get; set; }
+
+        [Browsable(false)]
+        public string ObjectKey { get; set; }
     }
 }
