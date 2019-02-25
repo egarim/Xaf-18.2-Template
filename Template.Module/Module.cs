@@ -19,11 +19,12 @@ using DevExpress.ExpressApp.Xpo;
 using Template.Module.SuperSearch;
 using Template.Module.BusinessObjects.Accounting;
 using Template.Module.BusinessObjects.InventoryControl;
+using Template.Module.PredefinedSearch;
 
 namespace Template.Module
 {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppModuleBasetopic.aspx.
-    public sealed partial class TemplateModule : ModuleBase, IGetSuperSearchTypes
+    public sealed partial class TemplateModule : ModuleBase, IGetSuperSearchTypes, IPredefinedSearch
     {
         public TemplateModule()
         {
@@ -56,6 +57,14 @@ namespace Template.Module
             Types.Add(typeof(Accounting));
             Types.Add(typeof(Ic));
             return Types;
+        }
+
+        public List<Tuple<Type, Type>> GetPredefinedSearch()
+        {
+            List<Tuple<Type, Type>> PredefinedSearch = new List<Tuple<Type, Type>>();
+            PredefinedSearch.Add(new Tuple<Type, Type>(typeof(Accounting), typeof(AccountingSearch1)));
+            PredefinedSearch.Add(new Tuple<Type, Type>(typeof(Accounting), typeof(AccountingSearch2)));
+            return PredefinedSearch;
         }
     }
 }

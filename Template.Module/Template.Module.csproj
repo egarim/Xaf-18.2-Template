@@ -101,6 +101,16 @@
     <Compile Include="BusinessObjects\InventoryControl\Ic.cs" />
     <Compile Include="BusinessObjects\PurchaseOrders\Po.cs" />
     <Compile Include="BusinessObjects\SalesOrders\So.cs" />
+    <Compile Include="PredefinedSearch\AccountingSearch2.cs" />
+    <Compile Include="PredefinedSearch\AccountingSearch1.cs" />
+    <Compile Include="PredefinedSearch\IGetCriteria.cs" />
+    <Compile Include="PredefinedSearch\IPredefinedSearch.cs" />
+    <Compile Include="PredefinedSearch\PredefinedSearchController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PredefinedSearch\PredefinedSearchController.Designer.cs">
+      <DependentUpon>PredefinedSearchController.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuperSearch\IGetSuperSearchTypes.cs" />
     <Compile Include="SuperSearch\SearchResult.cs" />
     <Compile Include="Controllers\ModulesController.cs">
@@ -124,6 +134,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controllers\ModulesController.resx">
       <DependentUpon>ModulesController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PredefinedSearch\PredefinedSearchController.resx">
+      <DependentUpon>PredefinedSearchController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuperSearch\SuperSearchController.resx">
       <DependentUpon>SuperSearchController.cs</DependentUpon>
