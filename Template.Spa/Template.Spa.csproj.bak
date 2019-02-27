@@ -57,23 +57,23 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DevExpress.ExpressApp.CloneObject.v18.2">
-      
+      <HintPath>DevExpress.ExpressApp.CloneObject.v18.2</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Objects.v18.2">
-      
+      <HintPath>DevExpress.ExpressApp.Objects.v18.2</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Security.v18.2">
-      
+      <HintPath>DevExpress.ExpressApp.Security.v18.2</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Security.Xpo.v18.2">
-      
+      <HintPath>DevExpress.ExpressApp.Security.Xpo.v18.2</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Validation.v18.2">
-      
+      <HintPath>DevExpress.ExpressApp.Validation.v18.2</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System.Configuration"><Private>False</Private></Reference>

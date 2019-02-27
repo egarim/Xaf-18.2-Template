@@ -4,12 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D05D93DF-312D-4D4E-B980-726871EC7833}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Template.Win</RootNamespace>
-    <AssemblyName>Template.Win</AssemblyName>
-    <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
+    <RootNamespace>Template.Module.Win</RootNamespace>
+    <AssemblyName>Template.Module.Win</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -59,42 +58,19 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.ExpressApp.CloneObject.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.Security.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Objects.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Security.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.Validation.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.Validation.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.Validation.Win.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v18.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.Office.v18.2.Core">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.RichEdit.v18.2.Core">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.Validation.Win.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Utils.v18.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.BonusSkins.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Printing.v18.2.Core">
@@ -103,10 +79,10 @@
     <Reference Include="DevExpress.Data.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v18.2">
+    <Reference Include="DevExpress.ExpressApp.Xpo.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Images.v18.2">
+    <Reference Include="DevExpress.ExpressApp.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Win.v18.2">
@@ -124,9 +100,6 @@
     <Reference Include="DevExpress.XtraGrid.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v18.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="DevExpress.XtraEditors.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -136,22 +109,13 @@
     <Reference Include="DevExpress.XtraNavBar.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraBars.v18.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="DevExpress.XtraPrinting.v18.2">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v18.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v18.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v18.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Name>System</Name>
       <Private>False</Private>
@@ -177,56 +141,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinApplication.cs">
+    <Compile Include="Controllers\WindowNavigationControllerWin.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="WinApplication.Designer.cs">
-      <DependentUpon>WinApplication.cs</DependentUpon>
+    <Compile Include="WinModule.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="WinApplication.resx">
-      <DependentUpon>WinApplication.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <None Include="App.config" />
-    <Content Include="Model.xafml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinModule.Designer.cs">
+      <DependentUpon>WinModule.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExpressApp.ico" />
-    <None Include="Images\ReadMe.txt" />
-    <None Include="ReadMe.txt" />
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="WinModule.resx">
+      <DependentUpon>WinModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Template.Module.Win\Template.Module.Win.csproj">
-      <Project>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</Project>
-      <Name>Template.Module.Win</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Template.Module\Template.Module.csproj">
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
       <Name>Template.Module</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Editors\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ReadMe.txt" />
+    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
